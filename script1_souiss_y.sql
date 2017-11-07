@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS site_souiss_y CHARACTER SET 'utf8';
 
 use site_souiss_y;
 
-DROP TABLE IF EXISTS Utilisateurs, Rôle, Produits, Categories, Categorie_Produit, Produit_Utilisateur;
+/*DROP TABLE IF EXISTS Utilisateurs, Rôle, Produits, Categories, Categorie_Produit, Produit_Utilisateur;*/
 
 CREATE TABLE Utilisateurs(
 ID int NOT NULL AUTO_INCREMENT,
