@@ -53,9 +53,9 @@ PRIMARY KEY (ID)
 );
 
 CREATE TABLE Categorie_Produit(
-ID_catergorie int NOT NULL,
+ID_categorie int NOT NULL,
 ID_produit int NOT NULL,
-FOREIGN KEY (ID_catergorie) REFERENCES Categories (ID),
+FOREIGN KEY (ID_categorie) REFERENCES Categories (ID),
 FOREIGN KEY (ID_produit) REFERENCES Produits (ID)
 );
 
@@ -101,16 +101,16 @@ INSERT INTO Categories (ID, Libelle, Description, Date_creation, Date_modificati
 INSERT INTO Categories (ID, Libelle, Description, Date_creation, Date_modification) VALUES (NULL, 'Tel', 'asdfghjkl', '2017-11-06', '2017-11-06');
 INSERT INTO Categories (ID, Libelle, Description, Date_creation, Date_modification) VALUES (NULL, 'Tv', 'zxcvbnm', '2017-11-06', '2017-11-06');
 
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','1');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','2');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','3');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','4');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','5');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','6');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','7');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','8');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','8');
-INSERT INTO Categorie_Produit(ID_catergorie, ID_produit) VALUES ('1','9');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','1');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','2');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','3');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('2','4');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('2','5');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('2','6');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('2','7');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','10');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','8');
+INSERT INTO Categorie_Produit(ID_categorie, ID_produit) VALUES ('1','9');
 
 INSERT INTO Produit_Utilisateur(ID_utilisateur, ID_produit) VALUES ('1','4');
 INSERT INTO Produit_Utilisateur(ID_utilisateur, ID_produit) VALUES ('2','8');
