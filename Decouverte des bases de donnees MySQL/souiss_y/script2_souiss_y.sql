@@ -31,3 +31,4 @@ r.ID_produit = p.ID
 where r.ID_categorie is not null;
 
 /*Etape12*/
+SELECT ID, Libelle, Description, Prix_achat, Prix_vente, Nombres_produit,Date_creation, Date_modification FROM Produits WHERE ID BETWEEN 1 AND 5;
