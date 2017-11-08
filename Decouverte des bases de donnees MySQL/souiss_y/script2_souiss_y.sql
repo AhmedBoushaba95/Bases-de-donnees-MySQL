@@ -49,9 +49,7 @@ SET Nom = 'DAMIAN', Prenom = 'CHANVILLE', Date_de_naissance = '1991-08-11', Vill
 WHERE ID = 5;
 
 /*Etape17*/
-SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs as u
-LEFT JOIN Rôle as r ON
-u.ID = r.ID;
+SELECT * FROM Utilisateurs as u LEFT JOIN Rôle as r ON r.ID = u.ID ;
 
 /*Etape18*/
 
