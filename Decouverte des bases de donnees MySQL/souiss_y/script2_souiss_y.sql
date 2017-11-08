@@ -24,7 +24,7 @@ SELECT SUM(Prix_vente) FROM Produits;
 SELECT * FROM Produits as p 
 LEFT JOIN Categorie_Produit as r ON
 r.ID_produit = p.ID
-where r.ID_categorie is null;
+WHERE r.ID_categorie is null;
 SELECT * FROM Produits as p 
 LEFT JOIN Categorie_Produit as r ON
 r.ID_produit = p.ID
@@ -34,4 +34,16 @@ where r.ID_categorie is not null;
 SELECT ID, Libelle, Description, Prix_achat, Prix_vente, Nombres_produit,Date_creation, Date_modification FROM Produits WHERE ID BETWEEN 1 AND 5;
 
 /*Etape13*/
-SELECT * FROM Categories WHERE ID = 1 OR ID = 3;
+SELECT ID, Libelle, Description, Date_creation, Date_modification FROM Categories WHERE ID = 1 OR ID = 3;
+
+/*Etape14*/
+SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs WHERE ID in (1,3);
+
+/*Etape15*/
+SELECT * FROM Produits WHERE Prix_vente > 0.5;
+
+/*Etape16*/
+UPDATE Utilisateurs
+SET Nom = 'DAMIAN', Prenom = 'CHANVILLE', Date_de_naissance = '1991-08-11', Ville = 'Paris', Adresse = 'Paris 18eme arr', Code_postale = '75018', Pays = 'France', Sexe = 'Homme', Rôle = 'Etudiant', Date_creation = '2017-09-16', Date_modification = '2017-11-07'
+WHERE ID = 5;
+
