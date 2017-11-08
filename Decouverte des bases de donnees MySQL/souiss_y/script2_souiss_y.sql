@@ -49,3 +49,9 @@ WHERE ID = 5;
 
 /*Etape17*/
 
+/*Etape18*/
+
+/*Etape19*/
+
+/*Etape20*/
+DELETE FROM Utilisateurs WHERE ID = 5;
