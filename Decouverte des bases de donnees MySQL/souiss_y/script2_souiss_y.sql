@@ -4,8 +4,9 @@ use site_souiss_y;
 SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs;
 
 /*Etape06*/
-SELECT ID, Libelle, Description, Prix_achat, Prix_vente, Nombres_produit, Date_creation, Date_modification FROM Produits;
-SELECT ID, Libelle, Description, Date_creation, Date_modification FROM Categories;
+SELECT p.ID, p.Libelle, p.Description, p.Prix_achat, p.Prix_vente, p.Nombres_produit,p.Date_creation, p.Date_modification,  c.ID, c.Libelle, c.Description, c.Date_creation, c.Date_modification FROM Produits as p 
+LEFT JOIN Categories as c ON
+c.ID = p.ID;
 
 /*Etape07*/
 SELECT Nom, Prenom, Date_de_naissance FROM Utilisateurs ORDER BY Date_de_naissance DESC;
@@ -48,10 +49,15 @@ SET Nom = 'DAMIAN', Prenom = 'CHANVILLE', Date_de_naissance = '1991-08-11', Vill
 WHERE ID = 5;
 
 /*Etape17*/
+SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs as u
+LEFT JOIN Rôle as r ON
+u.ID = r.ID;
 
 /*Etape18*/
 
+
 /*Etape19*/
+
 
 /*Etape20*/
 DELETE FROM Utilisateurs WHERE ID = 5;
