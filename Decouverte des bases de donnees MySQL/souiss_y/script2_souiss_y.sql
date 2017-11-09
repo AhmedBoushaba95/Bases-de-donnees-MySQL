@@ -52,10 +52,16 @@ WHERE ID = 5;
 SELECT * FROM Utilisateurs as u LEFT JOIN Rôle as r ON r.ID = u.ID ;
 
 /*Etape18*/
-
+SELECT p.Libelle, c.* FROM Categories as c
+LEFT JOIN Categorie_Produit as cp ON cp.ID_categorie = c.ID
+LEFT JOIN Produits as p ON cp.ID_produit = p.ID
+WHERE p.ID != 0;
 
 /*Etape19*/
-
+SELECT p.Description, c.* FROM (Categories as c)
+LEFT JOIN Categorie_Produit as cp ON cp.ID_categorie = c.ID 
+LEFT JOIN Produits as p ON cp.ID_produit = p.ID
+WHERE p.ID != 0;
 
 /*Etape20*/
 DELETE FROM Utilisateurs WHERE ID = 5;
