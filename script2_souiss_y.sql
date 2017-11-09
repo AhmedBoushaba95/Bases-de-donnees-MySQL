@@ -44,9 +44,8 @@ SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Se
 SELECT * FROM Produits WHERE Prix_vente > 0.5;
 
 /*Etape16*/
-UPDATE Utilisateurs
-SET Nom = 'DAMIAN', Prenom = 'CHANVILLE', Date_de_naissance = '1991-08-11', Ville = 'Paris', Adresse = 'Paris 18eme arr', Code_postale = '75018', Pays = 'France', Sexe = 'Homme', Rôle = 'Etudiant', Date_creation = '2017-09-16', Date_modification = '2017-11-07'
-WHERE ID = 5;
+DELETE FROM Utilisateurs WHERE ID = 5;
+INSERT INTO Utilisateurs (ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification) VALUES (5, 'Boushaba', 'Mohammed', '1995-10-19', 'Rabat', 'Av de SM Mohamed 6','12012','Maroc','Homme', 'Ingenieur Dev', '2017-01-01','2017-11-09');
 
 /*Etape17*/
 SELECT * FROM Utilisateurs as u LEFT JOIN Rôle as r ON r.ID = u.ID ;
@@ -65,3 +64,19 @@ WHERE p.ID != 0;
 
 /*Etape20*/
 DELETE FROM Utilisateurs WHERE ID = 5;
+
+/*Etape21*/
+CREATE TABLE backup_produit(
+ID int NOT NULL AUTO_INCREMENT,
+Libelle text NOT NULL,
+Description text NOT NULL,
+Prix_achat varchar(10) NOT NULL,
+Prix_vente varchar(10) NOT NULL,
+Nombres_produit int NOT NULL,
+Date_creation date NOT NULL,
+Date_modification date NOT NULL,
+PRIMARY KEY (ID)
+);
+CREATE TRIGGER ondelete AFTER DELETE ON Produits 
+FOR EACH ROW
+INSERT INTO backup_produit VALUES (NULL, old.Libelle, old.Description, old.Prix_achat, old.Prix_vente, old.Nombres_produit,old.Date_creation, old.Date_modification);
