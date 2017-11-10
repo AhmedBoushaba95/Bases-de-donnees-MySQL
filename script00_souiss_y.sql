@@ -1,3 +1,3 @@
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'koko';
-GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';
+CREATE USER 'PHPMyAdmin'@'localhost' IDENTIFIED BY 'almadina-a1';
+GRANT ALL PRIVILEGES ON * . * TO 'PHPMyAdmin'@'localhost';
 FLUSH PRIVILEGES;
