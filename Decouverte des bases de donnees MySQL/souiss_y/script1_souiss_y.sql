@@ -28,7 +28,7 @@ Date_creation date NOT NULL,
 Date_modification date NOT NULL,
 PRIMARY KEY (ID),
 FOREIGN KEY (Rôle) REFERENCES Rôle (ID)
-)ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+);
 
 CREATE TABLE Produits(
 ID int NOT NULL AUTO_INCREMENT,
