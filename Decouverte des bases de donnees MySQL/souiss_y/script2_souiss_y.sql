@@ -1,7 +1,5 @@
-use site_souiss_y;
-
 /*Etape05*/
-SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs;
+SELECT * FROM Utilisateurs;
 
 /*Etape06*/
 SELECT p.ID, p.Libelle, p.Description, p.Prix_achat, p.Prix_vente, p.Nombres_produit,p.Date_creation, p.Date_modification,  c.ID, c.Libelle, c.Description, c.Date_creation, c.Date_modification FROM Produits as p 
@@ -32,23 +30,24 @@ r.ID_produit = p.ID
 where r.ID_categorie is not null;
 
 /*Etape12*/
-SELECT ID, Libelle, Description, Prix_achat, Prix_vente, Nombres_produit,Date_creation, Date_modification FROM Produits WHERE ID BETWEEN 1 AND 5;
+SELECT * FROM Produits WHERE ID BETWEEN 1 AND 5;
 
 /*Etape13*/
-SELECT ID, Libelle, Description, Date_creation, Date_modification FROM Categories WHERE ID = 1 OR ID = 3;
+SELECT * FROM Categories WHERE ID = 1 OR ID = 3;
 
 /*Etape14*/
-SELECT ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification FROM Utilisateurs WHERE ID in (1,3);
+SELECT * FROM Utilisateurs WHERE ID in (2,7);
 
 /*Etape15*/
 SELECT * FROM Produits WHERE Prix_vente > 0.5;
 
 /*Etape16*/
-DELETE FROM Utilisateurs WHERE ID = 5;
-INSERT INTO Utilisateurs (ID, Nom, Prenom, Date_de_naissance, Ville, Adresse,Code_postale, Pays, Sexe, Rôle, Date_creation, Date_modification) VALUES (5, 'Boushaba', 'Mohammed', '1995-10-19', 'Rabat', 'Av de SM Mohamed 6','12012','Maroc','Homme', 'Ingenieur Dev', '2017-01-01','2017-11-09');
+UPDATE Utilisateurs 
+SET Nom = 'Boushaba', Prenom = 'Mohammed', Date_de_naissance = '1995-10-19', Ville = 'Rabat', Adresse = 'Av de SM Mohamed 6', Code_postale = '12012', Pays= 'Maroc', Sexe = 'Homme', Rôle = 'Ingenieur Dev', Date_creation = '2017-01-01', Date_modification = '2017-11-09'
+WHERE ID = 5;
 
 /*Etape17*/
-SELECT * FROM Utilisateurs as u LEFT JOIN Rôle as r ON r.ID = u.ID ;
+SELECT * FROM Utilisateurs as u LEFT JOIN Rôle as r ON r.ID = u.Rôle; 
 
 /*Etape18*/
 SELECT p.Libelle, c.* FROM Categories as c
