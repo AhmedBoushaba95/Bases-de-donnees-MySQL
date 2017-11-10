@@ -76,6 +76,6 @@ Date_creation date NOT NULL,
 Date_modification date NOT NULL,
 PRIMARY KEY (ID)
 );
-CREATE TRIGGER ondelete AFTER DELETE ON Produits 
+CREATE TRIGGER ondelete BEFORE DELETE ON Produits 
 FOR EACH ROW
 INSERT INTO backup_produit VALUES (NULL, old.Libelle, old.Description, old.Prix_achat, old.Prix_vente, old.Nombres_produit,old.Date_creation, old.Date_modification);
